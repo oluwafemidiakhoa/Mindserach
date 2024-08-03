@@ -1,0 +1,117 @@
+markdown
+Copy code
+# MindSearch
+
+MindSearch is an intelligent web search application that utilizes web scraping and the OpenAI API to provide detailed answers to user queries. The application is built using Flask for the web interface and leverages caching mechanisms to optimize performance.
+
+## Features
+
+- **Web Search**: Retrieves information from the web using BeautifulSoup and requests.
+- **Contextual Responses**: Uses OpenAI's API to generate detailed responses based on the retrieved information.
+- **Caching**: Implements caching to store frequent queries and reduce the number of API calls and web searches.
+- **User Interface**: Simple web interface built with Flask for user interaction.
+- **Advanced Query Processing**: Decomposes complex queries into sub-questions for more accurate responses.
+
+## Installation
+
+### Prerequisites
+
+- Python 3.x
+- pip (Python package installer)
+- Virtual environment (optional but recommended)
+
+### Steps
+
+1. **Clone the repository**:
+
+    ```bash
+    git clone https://github.com/your-username/mindsearch.git
+    cd mindsearch
+    ```
+
+2. **Create and activate a virtual environment**:
+
+    For Windows:
+    ```bash
+    python -m venv venv
+    venv\Scripts\activate
+    ```
+
+    For macOS/Linux:
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+3. **Install the dependencies**:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Set up environment variables**:
+
+    Create a `.env` file in the root directory and add your OpenAI API key:
+    ```
+    OPENAI_API_KEY=your_openai_api_key
+    ```
+
+5. **Run the application**:
+
+    ```bash
+    python app.py
+    ```
+
+6. **Access the application**:
+
+    Open your web browser and navigate to `http://127.0.0.1:5000`.
+
+## Project Structure
+
+MindSearch/
+├── cache/
+├── data/
+├── logs/
+├── models/
+├── src/
+│ ├── init.py
+│ ├── cache.py
+│ ├── config.py
+│ ├── mindsearch.py
+│ ├── web_planner.py
+│ └── web_searcher.py
+├── templates/
+│ └── index.html
+├── tests/
+│ ├── init.py
+│ ├── test_mindsearch.py
+│ ├── test_web_planner.py
+│ └── test_web_searcher.py
+├── venv/
+├── app.py
+├── requirements.txt
+├── README.md
+
+bash
+Copy code
+
+## Running Tests
+
+To run the unit tests, execute the following command:
+
+```bash
+python -m unittest discover -s tests
+Future Enhancements
+Improved Error Handling: Add robust error handling to manage network issues, API errors, and unexpected HTML structures.
+Caching: Implement advanced caching mechanisms to store frequent queries and reduce the number of API calls and web searches.
+User Interface: Develop a user-friendly web or desktop interface for easier interaction with the application.
+Integration with Additional Data Sources: Expand the application to integrate with more data sources for richer and more diverse information retrieval.
+Advanced Query Processing: Enhance the query decomposition logic to handle more complex and nuanced queries.
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgements
+OpenAI for their powerful AI API.
+Flask for the web framework.
+BeautifulSoup for web scraping.
+Requests for HTTP requests.
